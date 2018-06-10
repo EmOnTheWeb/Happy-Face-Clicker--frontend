@@ -57,6 +57,126 @@ export class FacesComponent implements OnInit {
 		    id: 5,
 		    path: 'placeholder.jpg', 
 		    status: 'sad'
+	  	}, 
+	  	{
+		    id: 5,
+		    path: 'placeholder-happy.jpg', 
+		    status: 'happy'
+	  	}, 
+	  	  	{
+		    id: 1,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	},
+	  	{
+		    id: 2,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	},
+	  	{
+		    id: 3,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	},
+	  	{
+		    id: 4,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	}, 
+	  	{
+		    id: 5,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	}, 
+	  	{
+		    id: 5,
+		    path: 'placeholder-happy.jpg', 
+		    status: 'happy'
+	  	}, 
+	  	  	{
+		    id: 1,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	},
+	  	{
+		    id: 2,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	},
+	  	{
+		    id: 3,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	},
+	  	{
+		    id: 4,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	}, 
+	  	{
+		    id: 5,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	}, 
+	  	{
+		    id: 5,
+		    path: 'placeholder-happy.jpg', 
+		    status: 'happy'
+	  	}, 
+	  	  	{
+		    id: 1,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	},
+	  	{
+		    id: 2,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	},
+	  	{
+		    id: 3,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	},
+	  	{
+		    id: 4,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	}, 
+	  	{
+		    id: 5,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	}, 
+	  	{
+		    id: 5,
+		    path: 'placeholder-happy.jpg', 
+		    status: 'happy'
+	  	}, 
+	  	  	{
+		    id: 1,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	},
+	  	{
+		    id: 2,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	},
+	  	{
+		    id: 3,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	},
+	  	{
+		    id: 4,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
+	  	}, 
+	  	{
+		    id: 5,
+		    path: 'placeholder.jpg', 
+		    status: 'sad'
 	  	}
   	];
 
@@ -66,7 +186,13 @@ export class FacesComponent implements OnInit {
 
 	check(status) {
 		if(status==='happy') {
-			console.log('a happy face'); 
+			this.fetchNewFacesFromServer(); 
 		}
+	}
+
+	fetchNewFacesFromServer() {
+		console.log('method to fetch new faces from server'); 
+
+
 	}
 }
