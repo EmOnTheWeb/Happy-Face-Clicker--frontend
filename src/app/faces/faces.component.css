@@ -1,0 +1,20 @@
+.face-row {
+	display:flex; 
+	flex-wrap:wrap;
+	margin-right:-10px; 
+}
+.face {
+	width:20%; 
+	padding-top:20%; 
+	position:relative; 
+}
+.face-img {
+	position:absolute; 
+	top:0; 
+	left:0; 
+	right:10px;  
+	bottom:10px;
+	cursor:pointer; 
+	background-size:cover; 
+	background-position:center center;  
+}

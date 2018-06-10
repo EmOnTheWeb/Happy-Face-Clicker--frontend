@@ -1,3 +1,3 @@
-<p>
-  faces works!
-</p>
+<div class="row face-row">
+	<div *ngFor="let face of faces" class="face"><div [ngStyle]="{'background-image': 'url(assets/faces/placeholder.jpg)'}" class="face-img"></div></div>
+</div>

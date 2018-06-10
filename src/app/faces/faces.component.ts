@@ -27,7 +27,37 @@ export class FacesComponent implements OnInit {
 		    id: 4,
 		    path: '', 
 		    status: 'sad'
-	  	} 
+	  	}, 
+	  	{
+		    id: 5,
+		    path: '', 
+		    status: 'sad'
+	  	}, 
+	  	  	{
+		    id: 1,
+		    path: '', 
+		    status: 'sad'
+	  	},
+	  	{
+		    id: 2,
+		    path: '', 
+		    status: 'sad'
+	  	},
+	  	{
+		    id: 3,
+		    path: '', 
+		    status: 'sad'
+	  	},
+	  	{
+		    id: 4,
+		    path: '', 
+		    status: 'sad'
+	  	}, 
+	  	{
+		    id: 5,
+		    path: '', 
+		    status: 'sad'
+	  	}
   	];
 
   constructor() { }
