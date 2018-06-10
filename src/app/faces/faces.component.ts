@@ -10,59 +10,63 @@ export class FacesComponent implements OnInit {
   	faces: Array<Face> = [
 	  	{
 		    id: 1,
-		    path: '', 
+		    path: 'placeholder.jpg', 
 		    status: 'sad'
 	  	},
 	  	{
 		    id: 2,
-		    path: '', 
+		    path: 'placeholder.jpg', 
 		    status: 'sad'
 	  	},
 	  	{
 		    id: 3,
-		    path: '', 
+		    path: 'placeholder.jpg', 
 		    status: 'sad'
 	  	},
 	  	{
 		    id: 4,
-		    path: '', 
+		    path: 'placeholder.jpg', 
 		    status: 'sad'
 	  	}, 
 	  	{
 		    id: 5,
-		    path: '', 
-		    status: 'sad'
+		    path: 'placeholder-happy.jpg', 
+		    status: 'happy'
 	  	}, 
 	  	  	{
 		    id: 1,
-		    path: '', 
+		    path: 'placeholder.jpg', 
 		    status: 'sad'
 	  	},
 	  	{
 		    id: 2,
-		    path: '', 
+		    path: 'placeholder.jpg', 
 		    status: 'sad'
 	  	},
 	  	{
 		    id: 3,
-		    path: '', 
+		    path: 'placeholder.jpg', 
 		    status: 'sad'
 	  	},
 	  	{
 		    id: 4,
-		    path: '', 
+		    path: 'placeholder.jpg', 
 		    status: 'sad'
 	  	}, 
 	  	{
 		    id: 5,
-		    path: '', 
+		    path: 'placeholder.jpg', 
 		    status: 'sad'
 	  	}
   	];
 
-  constructor() { }
+  	faces_asset_path:string = 'assets/faces/'; 
 
-  ngOnInit() {
-  }
+  	constructor() { }
 
+	check(status) {
+		if(status==='happy') {
+			console.log('a happy face'); 
+		}
+	}
 }

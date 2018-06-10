@@ -3,7 +3,7 @@
 	flex-wrap:wrap;
 	margin-right:-10px; 
 }
-.face {
+.face-container {
 	width:20%; 
 	padding-top:20%; 
 	position:relative; 
