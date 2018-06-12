@@ -135,11 +135,13 @@ export class FacesComponent implements OnInit {
 	  	}
   	];
 
-  	faces_asset_path:string = 'assets/faces/'; 
+  	facesAssetPath:string = 'assets/faces/'; 
 
   	constructor() { }
 
-  	ngOnInit() { }
+  	ngOnInit() { 
+  		this.fetchFacesFromServer(); 
+  	}
   	
 	check(status) {
 		if(status==='happy') {
@@ -149,7 +151,20 @@ export class FacesComponent implements OnInit {
 
 	fetchFacesFromServer() {
 		console.log('method to fetch new faces from server'); 
+		console.log(window.innerWidth); 
 
+		if(window.innerWidth >= 1200) { //1200 is max width of img container
+			let viewportWidthWOMargin = 1200 - 8; 
+			let imgWidthWMargin = viewportWidthWOMargin/5; //also img height w margin
+			console.log(imgWidthWMargin); 
+			let viewportHeightWOMargin = window.innerHeight - 8; 
+
+			//how many fit 
+			let numImgFitHeightways = Math.floor(viewportHeightWOMargin/imgWidthWMargin);
+			console.log(numImgFitHeightways); 
+			let numImgToFetch = numImgFitHeightways*5; 
+			console.log(numImgToFetch);  
+		}
 
 	}
 }
