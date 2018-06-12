@@ -4,6 +4,8 @@
 	margin-right:-10px; 
 	max-height:100vh; 
 	overflow:hidden;
+	max-width:1200px;
+	margin:0 auto; 
 }
 .face-container {
 	width:20%; 
@@ -14,9 +16,13 @@
 	position:absolute; 
 	top:0; 
 	left:0; 
-	right:10px;  
-	bottom:10px;
+	right:8px;  
+	bottom:8px;
 	cursor:pointer; 
 	background-size:cover; 
-	background-position:center center;  
+	background-position:center center; 
 }
+.face-container:nth-child(5n) > .face-img {
+	right:0px; 
+}
+

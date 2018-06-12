@@ -143,11 +143,11 @@ export class FacesComponent implements OnInit {
   	
 	check(status) {
 		if(status==='happy') {
-			this.fetchNewFacesFromServer(); 
+			this.fetchFacesFromServer(); 
 		}
 	}
 
-	fetchNewFacesFromServer() {
+	fetchFacesFromServer() {
 		console.log('method to fetch new faces from server'); 
 
 
