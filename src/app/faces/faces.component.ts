@@ -151,20 +151,21 @@ export class FacesComponent implements OnInit {
 
 	fetchFacesFromServer() {
 		console.log('method to fetch new faces from server'); 
-		console.log(window.innerWidth); 
+		let numFacesToFetch = this.calculateNumFacesToFetch(); 
+		console.log(numFacesToFetch); 
+	
+	}
 
-		if(window.innerWidth >= 1200) { //1200 is max width of img container
-			let viewportWidthWOMargin = 1200 - 8; 
-			let imgWidthWMargin = viewportWidthWOMargin/5; //also img height w margin
-			console.log(imgWidthWMargin); 
-			let viewportHeightWOMargin = window.innerHeight - 8; 
+	calculateNumFacesToFetch():Number {
 
-			//how many fit 
-			let numImgFitHeightways = Math.floor(viewportHeightWOMargin/imgWidthWMargin);
-			console.log(numImgFitHeightways); 
-			let numImgToFetch = numImgFitHeightways*5; 
-			console.log(numImgToFetch);  
-		}
+		let viewportWidthWOMargin = (window.innerWidth >= 1200) ? 1200 - 8 : window.innerWidth - 8; //8px is the extra margin 
+		let imgWidthWMargin = viewportWidthWOMargin/5; //also img height w margin 
+		let viewportHeightWOMargin = window.innerHeight - 8; 
+		
+		//how many fit 
+		let numImgFitHeightways = Math.floor(viewportHeightWOMargin/imgWidthWMargin);
+		let numImgToFetch = numImgFitHeightways*5; 
 
+		return numImgToFetch; 
 	}
 }
