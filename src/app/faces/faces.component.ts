@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Face } from '../face';
 
 @Component({
@@ -134,6 +134,8 @@ export class FacesComponent implements OnInit {
 		    status: 'sad'
 	  	}
   	];
+
+  	@ViewChild('faces_row') faces_row: ElementRef;
 
   	faces_asset_path:string = 'assets/faces/'; 
 
