@@ -1,5 +1,5 @@
 <div class="row face-row">
-	<ng-container *ngFor="let face of faces">
+	<ng-container *ngFor="let face of facesToShow">
 		<div class="face-container"><div [ngStyle]="{'background-image': 'url(' + facesAssetPath + face.path +')'}" class="face-img" (click)="check(face.status)"></div></div>
 	</ng-container>
 </div>

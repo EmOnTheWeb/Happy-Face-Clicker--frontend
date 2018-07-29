@@ -7,7 +7,7 @@ import { Face } from '../face';
   styleUrls: ['./faces.component.css']
 })
 export class FacesComponent implements OnInit {
-  	faces: Array<Face> = [
+  	allFaces: Array<Face> = [
 	  	{
 		    id: 1,
 		    path: 'placeholder.jpg', 
@@ -135,28 +135,38 @@ export class FacesComponent implements OnInit {
 	  	}
   	];
 
+  	facesToShow: Array<Face> = []; 
+
   	facesAssetPath:string = 'assets/faces/'; 
 
   	constructor() { }
 
   	ngOnInit() { 
   		this.fetchFacesFromServer(); 
+  		this.filterNumFaces(); 
   	}
   	
 	check(status) {
 		if(status==='smile') {
 			this.fetchFacesFromServer(); 
+			this.filterNumFaces(); 
 		}
 	}
 
 	fetchFacesFromServer() {
 		console.log('method to fetch new faces from server'); 
-		let numFacesToFetch = this.calculateNumFacesToFetch(); 
-		console.log(numFacesToFetch); 
+		//this.allFaces = 
 	
 	}
 
-	calculateNumFacesToFetch():Number {
+	filterNumFaces() {
+		let numFacesToShow = this.calculateNumFacesToShow(); 
+		console.log(numFacesToShow);
+		let allFacesCopy = JSON.parse(JSON.stringify(this.allFaces));
+		this.facesToShow = allFacesCopy.filter((item, index) => index < numFacesToShow); 
+	}
+
+	calculateNumFacesToShow():Number {
 
 		let viewportWidthWOMargin = (window.innerWidth >= 1200) ? 1200 - 8 : window.innerWidth - 8; //8px is the extra margin 
 		let imgWidthWMargin = viewportWidthWOMargin/5; //also img height w margin 
@@ -164,8 +174,8 @@ export class FacesComponent implements OnInit {
 		
 		//how many fit 
 		let numImgFitHeightways = Math.floor(viewportHeightWOMargin/imgWidthWMargin);
-		let numImgToFetch = numImgFitHeightways*5; 
+		let numImgToShow = numImgFitHeightways*5; 
 
-		return numImgToFetch; 
+		return numImgToShow; 
 	}
 }
