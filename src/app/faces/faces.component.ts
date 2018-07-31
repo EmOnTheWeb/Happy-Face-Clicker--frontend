@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { ViewChild, Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Face } from '../face';
 import { FaceService } from './faces.service';
-
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-faces',
@@ -17,10 +17,19 @@ export class FacesComponent implements OnInit {
 
   	numFacesToShow:number; 
 
-  	constructor(private faceService: FaceService) { }
+  	@ViewChild('content') modalContent;
+
+  	constructor(private faceService: FaceService, private modalService: NgbModal, private changeDetector: ChangeDetectorRef) { }
 
   	ngOnInit() { 
+
   		this.fetchFacesFromServer(); 
+  	
+  			setTimeout(() => {this.openModal(this.modalContent)},0); 
+  	}
+
+  	openModal(content) {
+    	this.modalService.open(content, { centered: true });
   	}
   	
 	check(status) {
