@@ -3,17 +3,15 @@
 		<div class="face-container"><div [ngStyle]="{'background-image': 'url(' + facesAssetPath + face.path +')'}" class="face-img" (click)="check(face.status)"></div></div>
 	</ng-container>	
 </div>
-<ng-template #content let-c="close" let-d="dismiss">
-		  <div class="modal-header">
-		    <h4 class="modal-title">Modal title</h4>
-		    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-		      <span aria-hidden="true">&times;</span>
-		    </button>
-		  </div>
-		  <div class="modal-body">
-		    <p>One fine body&hellip;</p>
-		  </div>
-		  <div class="modal-footer">
-		    <button type="button" class="btn btn-light" (click)="c('Close click')">Close</button>
-		  </div>
-	</ng-template>
+<ng-template #content let-c="close">
+  	<div class="modal-body">
+	    <p>This Happy Face Clicker is modeled on the 'attention training game' featured on the BBC Horizon documentary <span class="italic">Rainy Brain Sunny Brain: The New Science of Optimism and Pessimism</span>. The idea is to train the mind to disengage from the frowning faces and home in on the smiley, positive face. Through habituation, this enhances a positive attention bias, so making us more optimistic and improving a sense of wellbeing.</p>
+
+		<p>The game was originally developed by Dr Mark Baldwin at McGill University in Canada.</p>
+
+		<p>The website needs more faces! If you would like to contribute your face, frown or smile, please send images to <a href="mailto:happyfaceclicker@gmail.com">happyfaceclicker@gmail.com</a>. We especially need frowns! But please make sure the frown is a frown and not a smile because otherwise the game becomes confusing and ineffectual. Don't hesitate to email if you'd like your face taken down.</p> 
+
+		<p class="instructions"><span>How to play:</span> find and click the smiley face. Repeat.</p>
+  	</div>
+   <button type="button" class="btn btn-light modal-button" (click)="c('close click')">Got it!</button>
+</ng-template>

@@ -24,12 +24,18 @@ export class FacesComponent implements OnInit {
   	ngOnInit() { 
 
   		this.fetchFacesFromServer(); 
-  	
+  		
+  		let alreadyReadModal = localStorage.getItem('hfc-modal');
+  		if(!alreadyReadModal) {
   			setTimeout(() => {this.openModal(this.modalContent)},0); 
+  		}
   	}
 
   	openModal(content) {
-    	this.modalService.open(content, { centered: true });
+    	this.modalService.open(content, { centered: true }).result.then((result) => {
+      		localStorage.setItem('hfc-modal', true);
+    	}, 
+    	() => {});
   	}
   	
 	check(status) {
@@ -120,5 +126,9 @@ export class FacesComponent implements OnInit {
 		let numImgToShow = numImgFitHeightways*numImgToFitWidthways; 
 		console.log(numImgToShow); 
 		return numImgToShow; 
+	}
+
+	c() {
+		console.log('modal closed'); 
 	}
 }
