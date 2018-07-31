@@ -90,14 +90,26 @@ export class FacesComponent implements OnInit {
 
 	calculateNumFacesToShow():number {
 
+		let numImgToFitWidthways; 
+
+		if(window.innerWidth > 600) {
+			numImgToFitWidthways = 5; 
+		}
+		else if(window.innerWidth > 400 && window.innerWidth < 601) {
+			numImgToFitWidthways = 4; 
+		}
+		else if(window.innerWidth < 400) {
+			numImgToFitWidthways = 2; 
+		}
+
 		let viewportWidthWOMargin = (window.innerWidth >= 1200) ? 1200 - 8 : window.innerWidth - 8; //8px is the extra margin 
-		let imgWidthWMargin = viewportWidthWOMargin/5; //also img height w margin 
+		let imgWidthWMargin = viewportWidthWOMargin/numImgToFitWidthways; //also img height w margin 
 		let viewportHeightWOMargin = window.innerHeight - 8; 
 		
 		//how many fit 
 		let numImgFitHeightways = Math.floor(viewportHeightWOMargin/imgWidthWMargin);
-		let numImgToShow = numImgFitHeightways*5; 
-
+		let numImgToShow = numImgFitHeightways*numImgToFitWidthways; 
+		console.log(numImgToShow); 
 		return numImgToShow; 
 	}
 }
