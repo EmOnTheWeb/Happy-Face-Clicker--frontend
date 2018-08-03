@@ -4,7 +4,7 @@ import { Http,Headers } from '@angular/http';
 import { Face } from '../face'
 import { Observable } from 'rxjs';
 import { map, filter, catchError, mergeMap } from 'rxjs/operators';
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 
 
 @Injectable()
