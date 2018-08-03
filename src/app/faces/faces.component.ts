@@ -119,7 +119,7 @@ export class FacesComponent implements OnInit {
 
 		let viewportWidthWOMargin = (window.innerWidth >= 1200) ? 1200 - 8 : window.innerWidth - 8; //8px is the extra margin 
 		let imgWidthWMargin = viewportWidthWOMargin/numImgToFitWidthways; //also img height w margin 
-		let viewportHeightWOMargin = window.innerHeight - 8; 
+		let viewportHeightWOMargin = window.innerHeight + 80; 
 		
 		//how many fit 
 		let numImgFitHeightways = Math.floor(viewportHeightWOMargin/imgWidthWMargin);

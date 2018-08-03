@@ -12,11 +12,11 @@ export class FaceService {
 
     constructor(private http: Http) { }
 
-    private serverApi= `${this.serverApi}/environment.apiUrl`;
+    private serverApi= environment.apiUrl;
 
     public getFrowns():Observable<Face[]> {
 
-        let URI = `faces/frowns`;
+        let URI = `${this.serverApi}/faces/frowns`;
         return this.http.get(URI)
         .pipe(
             map((res) => res.json())
@@ -25,7 +25,7 @@ export class FaceService {
 
     public getSmile():Observable<Face[]> {
 
-        let URI = `faces/smile`;
+        let URI = `${this.serverApi}/faces/smile`;
         return this.http.get(URI)
         .pipe(
             map((res) => res.json())
