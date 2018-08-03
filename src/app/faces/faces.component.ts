@@ -22,7 +22,7 @@ export class FacesComponent implements OnInit {
   	constructor(private faceService: FaceService, private modalService: NgbModal, private changeDetector: ChangeDetectorRef) { }
 
   	ngOnInit() { 
-
+  
   		this.fetchFacesFromServer(); 
   		
   		let alreadyReadModal = localStorage.getItem('hfc-modal');
@@ -113,7 +113,7 @@ export class FacesComponent implements OnInit {
 		else if(window.innerWidth > 400 && window.innerWidth < 601) {
 			numImgToFitWidthways = 4; 
 		}
-		else if(window.innerWidth < 400) {
+		else if(window.innerWidth <= 400) {
 			numImgToFitWidthways = 2; 
 		}
 
