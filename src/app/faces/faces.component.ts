@@ -33,7 +33,7 @@ export class FacesComponent implements OnInit {
 
   	openModal(content) {
     	this.modalService.open(content, { centered: true }).result.then((result) => {
-      		localStorage.setItem('hfc-modal', true);
+      		localStorage.setItem('hfc-modal', '1');
     	}, 
     	() => {});
   	}

@@ -4,6 +4,7 @@ import { Http,Headers } from '@angular/http';
 import { Face } from '../face'
 import { Observable } from 'rxjs';
 import { map, filter, catchError, mergeMap } from 'rxjs/operators';
+import { environment } from '../environments/environment';
 
 
 @Injectable()
@@ -11,11 +12,11 @@ export class FaceService {
 
     constructor(private http: Http) { }
 
-    private serverApi= 'http://localhost:8000';
+    private serverApi= `${this.serverApi}/environment.apiUrl`;
 
     public getFrowns():Observable<Face[]> {
 
-        let URI = `${this.serverApi}/faces/frowns`;
+        let URI = `faces/frowns`;
         return this.http.get(URI)
         .pipe(
             map((res) => res.json())
@@ -24,7 +25,7 @@ export class FaceService {
 
     public getSmile():Observable<Face[]> {
 
-        let URI = `${this.serverApi}/faces/smile`;
+        let URI = `faces/smile`;
         return this.http.get(URI)
         .pipe(
             map((res) => res.json())
