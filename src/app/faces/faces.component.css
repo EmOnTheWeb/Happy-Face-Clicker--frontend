@@ -41,6 +41,7 @@
 }
 
 .face-img {
+	background-color:yellow;
 	position:absolute; 
 	top:0; 
 	left:0; 
